@@ -1,5 +1,7 @@
+
 import { Request, Response, NextFunction } from "express";
-import JWT from "jsonwebtoken";
+// import JWT from "jsonwebtoken";
+const JWT = require("jsonwebtoken");
 
 const checkAuth = async (req: Request, res: Response, next: NextFunction) => {
   //Check if they have token. If not, return
