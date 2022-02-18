@@ -5,7 +5,7 @@ import Table from "../models/table.model";
 import checkAuth from "../middleware/checkAuth";
 
 //add : checkAuth,
-router.get("/", async (req, res) => {
+router.get("/", async (req:any, res:any) => {
   // const { date, detail, price } = req.body;
   //   res.json({ date: date, detail: detail, price: price });
   Table.find()
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 //add : checkAuth,
-router.post("/add", async (req, res) => {
+router.post("/add", async (req:any, res:any) => {
   const { date, detail, price } = req.body;
   //   Table.create({
   //     date: "2022/02/17",
@@ -42,7 +42,7 @@ router.post("/add", async (req, res) => {
   });
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req:any, res:any) => {
   console.log("finding this id:", req.params.id);
   // Table.findByIdAndRemove(req.params.id, function (err: any) {
   //   if (err) {
