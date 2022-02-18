@@ -1,9 +1,11 @@
-import express from "express";
+// import express from "express";
+const express = require("express");
 const router = express.Router();
 import { body, validationResult } from "express-validator";
 import User from "../models/user.model";
 import bcrypt from "bcryptjs";
-import JWT from "jsonwebtoken";
+// import JWT from "jsonwebtoken";
+const JWT = require("jsonwebtoken");
 import checkAuth from "../middleware/checkAuth";
 
 router.post(
@@ -12,7 +14,7 @@ router.post(
   body("password")
     .isLength({ min: 5 })
     .withMessage("The password is too short"),
-  async (req, res) => {
+  async (req: any, res: any) => {
     //(1) Validate the email and password
     const validationErrors = validationResult(req);
     if (!validationErrors.isEmpty()) {
@@ -67,7 +69,7 @@ router.post(
   }
 );
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req: any, res: any) => {
   //(1) Get the user from the database
   const { email, password } = req.body;
   const user = await User.findOne({ email });
@@ -115,7 +117,7 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.get("/me", checkAuth, async (req, res) => {
+router.get("/me", checkAuth, async (req: any, res: any) => {
   const user = await User.findOne({ email: req.user });
 
   return res.json({
