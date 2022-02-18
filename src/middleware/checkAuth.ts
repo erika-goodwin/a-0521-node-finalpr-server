@@ -1,9 +1,15 @@
-
-import { Request, Response, NextFunction } from "express";
+// import { Request, Response, NextFunction } from "express";
+const Request = require("express").default;
+const Response = require("express").default;
+const NextFunction = require("express").default;
 // import JWT from "jsonwebtoken";
 const JWT = require("jsonwebtoken");
 
-const checkAuth = async (req: Request, res: Response, next: NextFunction) => {
+const checkAuth = async (
+  req: typeof Request,
+  res: typeof Response,
+  next: typeof NextFunction
+) => {
   //Check if they have token. If not, return
   let token = req.header("authorization");
   if (!token) {
