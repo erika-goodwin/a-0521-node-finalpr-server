@@ -4,8 +4,8 @@ dotenv.config();
 require("express-async-errors");
 require("./utils/db");
 
-// const express = require("express");
-import express from "express";
+const express = require("express");
+// import express from "express";
 import cors from "cors";
 
 const app = express();
