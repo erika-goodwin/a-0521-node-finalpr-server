@@ -1,6 +1,7 @@
-  "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js",
-    "build": "cd client && npm install && npm run build",
-    "start:dev": "nodemon --watch './**/*.ts' --exec ts-node src/index.ts"
-  },
+## [Authorization/expense app](https://heuristic-perlman-0e7948.netlify.app/) - **React, Node, Express, MongoDB**  
+
+     
+Rep: [a-0521-node-finalpr-client](https://github.com/erika-goodwin/a-0521-node-finalpr-client/tree/master)  
+Rep: [a-0521-node-finalpr-server](https://github.com/erika-goodwin/a-0521-node-finalpr-server/tree/master)  
+Node.js authorizaion practice with MERN spec. Deploy with Heroku and Netlify.
+     
